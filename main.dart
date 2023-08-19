@@ -1,12 +1,43 @@
+class Car {
+  String brand;
+  String model;
+  int year;
+  double milesDriven;
+  static int numberOfCars = 0;
 
-import 'class.dart';
+  Car(this.brand, this.model, this.year, this.milesDriven) {
+    numberOfCars++;
+  }
+  void drive(double miles) {
+    milesDriven += miles;
+  }
+  double getMilesDriven() {
+    return milesDriven;
+  }
+  String getBrand() {
+    return brand;
+  }
+
+  String getModel() {
+    return model;
+  }
+
+  int getYear() {
+    return year;
+  }
+
+  int getAge() {
+    int currentYear = DateTime.now().year;
+    return currentYear - year;
+  }
+}
 
 void main() {
-  var car1 = new Car ("Honda", "Civic", 2021,12000 );
+  Car car1 = Car ("Honda", "Civic", 2021,12000 );
 
-  var car2 = new Car("Mazda", "MX5", 2020, 15000);
+  Car car2 = Car("Mazda", "MX5", 2020, 15000);
 
-  var car3 = new Car("Dodge", "Viper", 2019, 20000);
+  Car car3 = Car("Dodge", "Viper", 2019, 20000);
 
   print("Car 1: ${car1.getBrand()} ${car1.getModel()} ${car1.getYear()} Miles: ${car1.getMilesDriven()} Age: ${car1.getAge()}");
 
